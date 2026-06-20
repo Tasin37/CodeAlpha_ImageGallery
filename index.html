@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="gallery-page">
+    <section class="intro">
+      <h1>Image Gallery</h1>
+      <p>Browse the collection with categories, navigation buttons, hover effects, and a lightbox preview.</p>
+    </section>
+
+    <section class="category-bar" aria-label="Gallery categories">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="nature">Nature</button>
+      <button class="filter-btn" data-filter="city">City</button>
+      <button class="filter-btn" data-filter="abstract">Abstract</button>
+      <button class="filter-btn" data-filter="uploaded">Uploaded</button>
+    </section>
+
+    <section class="upload-panel" aria-label="Upload new gallery image">
+      <form id="uploadForm">
+        <div class="upload-field">
+          <label for="imageTitle">Image title</label>
+          <input id="imageTitle" name="imageTitle" type="text" placeholder="Forest Path" required />
+        </div>
+        <div class="upload-field">
+          <label for="imageFile">Choose image</label>
+          <input id="imageFile" name="imageFile" type="file" accept="image/*" required />
+        </div>
+        <button type="submit" class="upload-btn">Upload</button>
+      </form>
+    </section>
+
+    <section class="gallery-grid" id="galleryGrid">
+      <article class="gallery-card" data-category="nature" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=80" alt="Forest path" />
+        <div class="card-overlay">
+          <h2>Forest Path</h2>
+          <span>Nature</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="city" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&w=800&q=80" alt="Night city skyline" />
+        <div class="card-overlay">
+          <h2>City Lights</h2>
+          <span>City</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="abstract" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="Abstract color shapes" />
+        <div class="card-overlay">
+          <h2>Color Burst</h2>
+          <span>Abstract</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="nature" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Mountain lake" />
+        <div class="card-overlay">
+          <h2>Mountain Lake</h2>
+          <span>Nature</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="city" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1506976785307-8732e854ad03?auto=format&fit=crop&w=800&q=80" alt="Architectural bridge" />
+        <div class="card-overlay">
+          <h2>City Bridge</h2>
+          <span>City</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="abstract" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1485893086445-ed75865251e0?auto=format&fit=crop&w=800&q=80" alt="Abstract fluid paint" />
+        <div class="card-overlay">
+          <h2>Fluid Art</h2>
+          <span>Abstract</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="nature" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Mountain waterfall" />
+        <div class="card-overlay">
+          <h2>Mountain Waterfall</h2>
+          <span>Nature</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="city" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="City street at dusk" />
+        <div class="card-overlay">
+          <h2>Dusk Street</h2>
+          <span>City</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="abstract" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=800&q=80" alt="Soft abstract gradient" />
+        <div class="card-overlay">
+          <h2>Soft Gradient</h2>
+          <span>Abstract</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="nature" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Sunlit forest" />
+        <div class="card-overlay">
+          <h2>Sunlit Forest</h2>
+          <span>Nature</span>
+        </div>
+      </article>
+
+
+
+      <article class="gallery-card" data-category="abstract" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=800&q=80" alt="Colorful abstract pattern" />
+        <div class="card-overlay">
+          <h2>Pattern Flow</h2>
+          <span>Abstract</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="nature" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Desert dunes" />
+        <div class="card-overlay">
+          <h2>Desert Dunes</h2>
+          <span>Nature</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="city" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="City skyline reflections" />
+        <div class="card-overlay">
+          <h2>Reflected Skyline</h2>
+          <span>City</span>
+        </div>
+      </article>
+
+
+
+      <article class="gallery-card" data-category="nature" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80" alt="Coastal cliffs" />
+        <div class="card-overlay">
+          <h2>Coastal Cliffs</h2>
+          <span>Nature</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="city" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="Busy urban intersection" />
+        <div class="card-overlay">
+          <h2>Urban Motion</h2>
+          <span>City</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="abstract" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="Abstract smoke shapes" />
+        <div class="card-overlay">
+          <h2>Smoke Waves</h2>
+          <span>Abstract</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="nature" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80" alt="Forest canopy" />
+        <div class="card-overlay">
+          <h2>Forest Canopy</h2>
+          <span>Nature</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="city" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" alt="City rooftop view" />
+        <div class="card-overlay">
+          <h2>Rooftop View</h2>
+          <span>City</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="abstract" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1481277542470-605612bd2d61?auto=format&fit=crop&w=800&q=80" alt="Kaleidoscope shapes" />
+        <div class="card-overlay">
+          <h2>Kaleidoscope</h2>
+          <span>Abstract</span>
+        </div>
+      </article>
+
+      <article class="gallery-card" data-category="nature" tabindex="0">
+        <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Wildflower field" />
+        <div class="card-overlay">
+          <h2>Wildflower Field</h2>
+          <span>Nature</span>
+        </div>
+      </article>
+
+
+    </section>
+    <div class="gallery-controls">
+      <button id="loadMoreBtn" class="load-more-btn">Show 6 More</button>
+    </div>
+  </main>
+
+  <div class="lightbox hidden" id="lightbox">
+    <button class="lightbox-close" id="closeLightbox" aria-label="Close preview">×</button>
+    <button class="lightbox-nav prev" id="prevBtn" aria-label="Previous image">‹</button>
+    <div class="lightbox-content">
+      <img id="lightboxImage" src="" alt="Expanded preview" />
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+    <button class="lightbox-nav next" id="nextBtn" aria-label="Next image">›</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

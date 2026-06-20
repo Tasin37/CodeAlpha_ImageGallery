@@ -1,0 +1,392 @@
+:root {
+  --bg: #0f172a;
+  --surface: rgba(15, 23, 42, 0.95);
+  --card: #111827;
+  --text: #e2e8f0;
+  --accent: #38bdf8;
+  --accent-strong: #22d3ee;
+  --muted: #94a3b8;
+  --shadow: 0 26px 50px rgba(15, 23, 42, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(74, 222, 128, 0.14), transparent 25%),
+    linear-gradient(180deg, #020617 0%, #0f172a 100%);
+  color: var(--text);
+}
+
+.gallery-page {
+  padding: 2rem clamp(1rem, 4vw, 4rem);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.intro h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2.3rem, 4vw, 3.6rem);
+  letter-spacing: -0.03em;
+}
+
+.intro p {
+  margin: 0;
+  max-width: 700px;
+  margin-inline: auto;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.category-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.upload-panel {
+  max-width: 920px;
+  margin: 0 auto 2rem;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(226, 232, 240, 0.12);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+}
+
+.upload-field {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.upload-field label {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.upload-field input[type="text"],
+.upload-field input[type="file"] {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border-radius: 0.95rem;
+  border: 1px solid rgba(226, 232, 240, 0.14);
+  background: rgba(15, 23, 42, 0.95);
+  color: var(--text);
+}
+
+.upload-field input[type="file"] {
+  padding: 0.75rem 1rem;
+}
+
+.upload-field input[type="file"]::-webkit-file-upload-button,
+.upload-field input[type="file"]::file-selector-button {
+  border: none;
+  background: rgba(56, 189, 248, 0.95);
+  color: #020617;
+  padding: 0.7rem 1rem;
+  border-radius: 0.85rem;
+  cursor: pointer;
+  font-weight: 400;
+  margin-right: 0.5rem;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.upload-field input[type="file"]::-webkit-file-upload-button:hover,
+.upload-field input[type="file"]::file-selector-button:hover {
+  transform: translateY(-1px);
+  background: rgba(34, 211, 238, 0.95);
+}
+
+.upload-field input[type="text"]::placeholder {
+  color: rgba(226, 232, 240, 0.55);
+}
+
+.upload-btn {
+  border: none;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.95), rgba(34, 211, 238, 0.95));
+  color: #020617;
+  padding: 0.95rem 1.5rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.2);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.upload-btn:hover,
+.upload-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 35px rgba(15, 23, 42, 0.25);
+}
+
+.upload-note {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.filter-btn {
+  border: 1px solid rgba(226, 232, 240, 0.18);
+  background: rgba(30, 41, 59, 0.72);
+  color: var(--text);
+  padding: 0.85rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.filter-btn:hover,
+.filter-btn:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(56, 189, 248, 0.8);
+  background: rgba(30, 41, 59, 0.9);
+}
+
+.filter-btn.active {
+  color: #fff;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.95), rgba(34, 211, 238, 0.9));
+  border-color: transparent;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.gallery-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.load-more-btn {
+  border: none;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.95), rgba(34, 211, 238, 0.95));
+  color: #020617;
+  padding: 0.95rem 1.5rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.2);
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.load-more-btn:hover,
+.load-more-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 35px rgba(15, 23, 42, 0.25);
+}
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transform: translateZ(0);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7));
+  box-shadow: var(--shadow);
+  transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.gallery-card:hover,
+.gallery-card:focus-within {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 36px 60px rgba(15, 23, 42, 0.45);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  transition: transform 400ms ease, filter 400ms ease;
+}
+
+.gallery-card:hover img,
+.gallery-card:focus-within img {
+  transform: scale(1.06);
+  filter: saturate(1.15) contrast(1.05);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  background: linear-gradient(180deg, transparent 40%, rgba(15, 23, 42, 0.85));
+  color: #fff;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+/* delete button on each card */
+.card-delete {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: none;
+  background: rgba(15, 23, 42, 0.7);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: background 160ms ease, transform 160ms ease, opacity 160ms;
+  opacity: 0;
+  z-index: 5;
+}
+
+.gallery-card:hover .card-delete,
+.gallery-card:focus-within .card-delete {
+  opacity: 1;
+}
+
+.card-delete:hover {
+  background: rgba(56, 189, 248, 0.95);
+  transform: translateY(-2px);
+}
+
+.gallery-card:hover .card-overlay,
+.gallery-card:focus-within .card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-overlay h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+}
+
+.card-overlay span {
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 20;
+  transition: opacity 220ms ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.lightbox-content {
+  position: relative;
+  width: min(100%, 940px);
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: #020617;
+  box-shadow: 0 36px 85px rgba(0, 0, 0, 0.65);
+}
+
+.lightbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 1.5rem;
+}
+
+.lightbox-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem 1.2rem;
+  color: #fff;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.75));
+  font-size: 1rem;
+}
+
+.lightbox-close,
+.lightbox-nav {
+  position: absolute;
+  border: none;
+  background: rgba(15, 23, 42, 0.78);
+  color: #fff;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  font-size: 1.65rem;
+  display: grid;
+  place-items: center;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.lightbox-close:hover,
+.lightbox-nav:hover {
+  background: rgba(56, 189, 248, 0.95);
+}
+
+.lightbox-close {
+  top: 1.5rem;
+  right: 1.5rem;
+  transform: none;
+}
+
+.lightbox-nav.prev {
+  left: 1rem;
+  top: 50%;
+}
+
+.lightbox-nav.next {
+  right: 1rem;
+  top: 50%;
+}
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-page {
+    padding: 1.25rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lightbox {
+    padding: 1rem;
+  }
+
+  .lightbox-close,
+  .lightbox-nav {
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.4rem;
+  }
+}
